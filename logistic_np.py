@@ -1,8 +1,3 @@
-"""
-This file is for two-class vehicle classification
-Author: Kien Huynh
-"""
-
 import numpy as np
 import matplotlib as plt
 from util import get_vehicle_data
@@ -173,13 +168,10 @@ def test(y_hat, test_y):
     FP = 0
     P = 0
 
-    for i in range(len(y_hat)):
-        if 0.5 < y_hat[i][0] <= 1 and test_y[i] == 1:
-            TP = TP + 1
-        if 0.5 < y_hat[i][0] <=1 and test_y[i] == 0:
-            FP = FP +1
-        if test_y[i] == 1 :
-            P = P + 1
+    for i in range(len(y_hat):
+        if 1e-2 < y_hat[i][0] <= 1 and test_y[i] == 1: TP+= 1
+        if 1e-2 < y_hat[i][0] <=1 and test_y[i] == 0: FP+= 1
+        if test_y[i] == 1 : P+= 1
 
     precision = TP/(TP + FP)
     recall = TP/P
